@@ -7,23 +7,13 @@ describe('Protractor demo app', function() {
   });
 
   it('should add one and two', function() {
-
-    main.text.first.sendKeys('1');
-    main.text.second.sendKeys('2');
-    main.button.go.click();
-
-    expect(main.label.latest.getText()).toEqual('3');
-
+    main.flows.sum('1', '2');
+    expect(main.elements.latest.getText()).toEqual('3');
   });
 
   it('should add three and seven', function() {
-
-    main.text.first.sendKeys('3');
-    main.text.second.sendKeys('7');
-    main.button.go.click();
-
-    expect(main.label.latest.getText()).toEqual('10');
-
+    main.flows.sum('3', '7');
+    expect(main.elements.latest.getText()).toEqual('10');
   });
 
 });

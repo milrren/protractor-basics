@@ -1,14 +1,19 @@
 'use strict';
 
+var inputFirst = element(by.model('first'));
+var inputSecond = element(by.model('second'));
+var buttonGo = element(by.id('gobutton'));
+var textLatest = element(by.binding('latest'));
+
 return module.exports = {
-  text: {
-    first: element(by.model('first')),
-    second: element(by.model('second'))
+  elements: {
+    latest: textLatest
   },
-  button: {
-    go: element(by.id('gobutton'))
-  },
-  label: {
-    latest: element(by.binding('latest'))
+  flows: {
+    sum: function(first, second) {
+      inputFirst.sendKeys(first);
+      inputSecond.sendKeys(second);
+      buttonGo.click();
+    }
   }
 };
