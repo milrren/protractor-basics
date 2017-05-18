@@ -1,5 +1,4 @@
 const main = require('./page-objects/main.js');
-const dataDriven = require('data-driven');
 
 describe('Protractor demo app', () => {
 
