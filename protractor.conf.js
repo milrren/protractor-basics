@@ -16,8 +16,9 @@ exports.config = {
     jasmine.getEnv().addReporter(reporter);
   },
   specs: ['test/**/*.js'],
-  directConnect: true,
   multiCapabilities: [
+    // To run tests on phantomjs, please follow the install instuctions on readme
+    // { browserName: 'phantomjs' },
     { browserName: 'chrome' }
   ]
 };
